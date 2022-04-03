@@ -39,7 +39,7 @@ public class KafkaConsumer {
         // 수량 변경
         if (entity != null) {
             entity.updateStock(entity.getStock() - (Integer) map.get("qty"));
-            // repository.save(entity);
+            repository.save(entity);
         }
 
 
