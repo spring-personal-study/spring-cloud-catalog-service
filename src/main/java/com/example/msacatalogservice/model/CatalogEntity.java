@@ -1,6 +1,7 @@
 package com.example.msacatalogservice.model;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
@@ -28,4 +29,9 @@ public class CatalogEntity implements Serializable {
     @Column(nullable = false, updatable = false, insertable = false)
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
+
+    public void updateStock(int stock) {
+        this.stock = stock;
+    }
+
 }
